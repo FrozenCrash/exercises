@@ -5,6 +5,12 @@ class Complement
     val
   end
 
+  def self.of_rna(strand)
+    val = ""
+    strand.each_char { |x| val << find_rna_complement(x) }
+    val
+  end
+
   def self.find_dna_complement(nucleotides)
     case nucleotides
     when 'C'
@@ -15,8 +21,20 @@ class Complement
       'A'
     when 'A'
       'U'
-    when 'U'  #
-      ''      
     end     
   end
+
+  def self.find_rna_complement(nucleotides)
+    case nucleotides
+    when 'C'
+      'G'
+    when 'G'
+      'C'
+    when 'U'
+      'A'
+    when 'A'
+      'T'
+    end
+  end
+
 end
