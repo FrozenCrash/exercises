@@ -3,6 +3,12 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'rna_transcription'
 
+# Book version
+
+module BookKeeping
+    VERSION = 4
+end
+
 # Test data version:
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
 
@@ -57,7 +63,6 @@ class ComplementTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 4, BookKeeping::VERSION
   end
 end
