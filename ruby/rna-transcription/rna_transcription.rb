@@ -11,10 +11,13 @@ class Complement
       'T' => 'A',
       'A' => 'U',
       }
+    
+    if strand.include?("X")
+    strand = ""
+    end
 
     strand.split('').map do |x|
       case strand
-        when x.include?('') then x = ""
         when !alphabet[x] then ''
         else alphabet[x]
       end
