@@ -14,8 +14,8 @@ class Complement
 
     strand.split('').map do |x|
       case strand
+        when x.include?('') then x = ""
         when !alphabet[x] then ''
-        when x.include?(nil) then ''
         else alphabet[x]
       end
     end.join('')
